@@ -1,6 +1,2 @@
 #1/bin/bash
-ls --file-type /tmp/
-
-
-
-
+file /tmp/iamafile
