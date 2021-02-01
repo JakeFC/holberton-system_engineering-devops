@@ -1,2 +1,2 @@
 #!/bin/bash
-echo -e {a..z}{a..z}"\n" | sort -d | grep -v 00
+printf '%s\n' {a..z}{a..z} | sort -d | grep -v 00
