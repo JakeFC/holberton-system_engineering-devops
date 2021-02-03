@@ -1,0 +1,2 @@
+#!/bin/bash
+cut -f 7,1 | sort -n | cut -f 2 | sort -d
