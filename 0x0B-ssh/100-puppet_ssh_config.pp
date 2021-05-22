@@ -2,7 +2,7 @@
 
 file { "/etc/ssh/ssh_config":
     ensure  => 'present',
-    content => 'PasswordAuthentication no\nIdentityFile -/.ssh/holberton',
+    content => 'PasswordAuthentication no\nIdentityFile -/.ssh/holberton'
 }
 
 #file_line { 'Remove pass auth':
