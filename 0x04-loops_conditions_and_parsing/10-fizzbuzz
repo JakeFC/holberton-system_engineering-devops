@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+for n in {1..100};
+do
+    mod3=$(($n % 3))
+    mod5=$(($n % 5))
+    if [ $mod3 -eq 0 ] && [ $mod5 -eq 0 ];
+    then
+	echo "FizzBuzz"
+    elif [ $mod3 -eq 0 ];
+    then
+	echo "Fizz"
+    elif [ $mod5 -eq 0 ];
+    then
+	echo "Buzz"
+    else
+	echo $n
+    fi
+done
