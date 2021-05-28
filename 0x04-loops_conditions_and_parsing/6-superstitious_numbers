@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# displays 1 to 20 and "bad luck from China" for 4, "bad luck from Japan" for 9, and "bad luck from Italy" for 17
+i=1
+while [ $i -le 20 ]
+do
+	echo $i
+	if [ $i -eq 4 ]
+	then
+		echo "bad luck from China"
+	elif [ $i -eq 9 ]
+	then
+		echo "bad luck from Japan"
+	elif [ $i -eq 17 ]
+	then
+		echo "bad luck from Italy"
+	fi
+	((i++))
+done
