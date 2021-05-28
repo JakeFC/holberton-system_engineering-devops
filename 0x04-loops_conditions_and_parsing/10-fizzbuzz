@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
+# displays 1 to 100, replacing multiples of 3 with Fizz, multiples of 5 with Buzz, and multiples of both with FizzBuzz
 for n in {1..100};
 do
-    mod3=$(($n % 3))
-    mod5=$(($n % 5))
+    mod3=$((n % 3))
+    mod5=$((n % 5))
     if [ $mod3 -eq 0 ] && [ $mod5 -eq 0 ];
     then
 	echo "FizzBuzz"
@@ -13,6 +14,6 @@ do
     then
 	echo "Buzz"
     else
-	echo $n
+	echo "$n"
     fi
 done
