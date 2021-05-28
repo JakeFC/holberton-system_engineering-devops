@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# gives information about holbertonschool file
 h="holbertonschool"
 if [ -e $h ];
 then
