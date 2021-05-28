@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#displays Holberton School 10 times using until
+i=10
+until [ $i -eq 0 ];
+do
+    echo "Holberton School"
+    i=$(( i - 1 ))
+done
