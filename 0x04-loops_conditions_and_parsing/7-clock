@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+h=0
+m=0
+while [ $h -le 12 ]
+do
+	if [ $m -eq 0 ];
+	then
+		echo "Hour: $h"
+	else
+		echo "$m"
+	fi
+	if [ $m -eq 59 ];
+	then
+		m=0
+		((h++))
+	else
+		((m++))
+	fi
+done
