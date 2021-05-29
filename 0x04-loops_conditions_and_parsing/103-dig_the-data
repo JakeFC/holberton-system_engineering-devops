@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # displays grouped visitor IP's and status codes by occurences, in descending order
 f="apache-access.log"
-awk '{print $1, $9}' $f | sort | uniq -c | sort -nr | sed 's/^[[:space:]]*//'
+awk '{print $1, $9}' $f | sort | uniq -c | sort -nr | tr -s " " | sed -r 's/^.{1}//'
