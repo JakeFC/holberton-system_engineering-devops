@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # displays the contents of file /etc/passwd with only username, user id, and home directory path
-cat /etc/passwd | while read f
+f="/etc/passwd"
+while read -r line
 do
-    echo "$f" | cut -d: -f1,3,6
-done
+    echo "$line" | cut -d: -f1,3,6
+done < $f
