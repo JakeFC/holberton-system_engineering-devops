@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# making curl return a page on a pre-set machine
+
+sudo service apache2 start
