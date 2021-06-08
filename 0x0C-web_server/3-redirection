@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# installing nginx locally with a redirect from our localhost
+# installing nginx locally with a redirect from our localhost to youtube
 
 sudo apt-get -y update
 sudo apt-get -y upgrade
