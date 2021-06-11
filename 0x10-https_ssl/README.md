@@ -39,7 +39,7 @@
 - you must have the port specification :80 on the end of your server IPs
 - you should be able to curl and be good to go at that point 
 
-
+# commands to get certbot
 
 -    sudo apt get-update
 -    sudo apt get-upgrade
