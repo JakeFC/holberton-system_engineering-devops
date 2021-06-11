@@ -1,7 +1,6 @@
 # setting up https
 
-- 0x10 https
-- Tutorial:
+# \#10 Tutorial:
 - https://serversforhackers.com/c/letsencrypt-with-haproxy
 - (INSIDE YOUR LB SERVER)
 - sudo apt-get update
@@ -12,7 +11,7 @@
 -  	acl letsencrypt-acl path_beg /.well-known/acme-challenge/
 -  	use_backend letsencrypt-backend if letsencrypt-acl
 - And then put this at the very end of the /etc/haproxy/haproxy.cfg file:
--	# LE Backend
+-	\# LE Backend
 -	backend letsencrypt-backend
 -  		server letsencrypt 127.0.0.1:8888
 - then run -
