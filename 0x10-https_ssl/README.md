@@ -41,14 +41,14 @@
 
 
 
-Sudo apt get-update
-Sudo apt get-upgrade
-sudo apt-get install software-properties-common
-Sudo add-apt-repository ppa:certbot/certbot
-Sudo apt-get update
-Sudo apt-get upgrade
-sudo apt-get install -y certbot
-Sudo apt-get install python-certbot-nginx
-Sudo apt-get update
-Sudo apt-get upgrade
+-    sudo apt get-update
+-    sudo apt get-upgrade
+-    sudo apt-get install software-properties-common
+-    sudo add-apt-repository ppa:certbot/certbot
+-    sudo apt-get update
+-    sudo apt-get upgrade
+-    sudo apt-get install -y certbot
+-    sudo apt-get install python-certbot-nginx
+-    sudo apt-get update
+-    sudo apt-get upgrade
 
