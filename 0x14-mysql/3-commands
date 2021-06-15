@@ -1,0 +1,6 @@
+-- creates a replica server user to be used as replication slave by
+-- holberton_user and gives holberton_user ability to see users
+
+CREATE USER 'replica_user'@'%' IDENTIFIED BY 'replica_pwd';
+GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
+GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
