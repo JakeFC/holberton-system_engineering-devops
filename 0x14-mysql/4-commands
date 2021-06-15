@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+sudo ufw allow 3306
+# on web-01
+    sudo emacs /etc/mysql/mysql.conf.d/mysqld.cnf
+    # comment bind-address line
+    # uncomment server-id = 1
+    # uncomment log_bin = /var/log/mysql/mysql-bin.log
+    sudo rm /etc/mysql/mysql.conf.d/*~
+    sudo service mysql restart
+    mysqldump -u root -p tyrell_corp > dump.sql
+    # copy dump file
+# on web-02
+    emacs dump.sql
+    # paste dump file from web-01
+    sudo emacs /etc/mysql/mysql.conf.d/mysqld.cnf
+    # uncomment and change server-id = 2
+    # uncomment log_bin = /var/log/mysql/mysql-bin.log
+    # uncomment and change binlog_do_db = tyrell_corp
+    sudo rm /etc/mysql/mysql.conf.d/*~
+    sudo service mysql restart
+    echo "CREATE DATABASE tyrell_corp;" | mysql -uroot -p
+    mysql -uroot -p tyrell_corp < dump.sql
+    # in web-01 mysql use 'show master status;' to see filename and pos for next steps
+    mysql -uroot -p
+    stop slave;
+    change master to
+    -> master_host='54.221.48.50', master_user='replica_user',
+    -> master_password='replica_pwd', master_log_file='mysql-bin.000002',
+    -> master_log_pos=154;
+    start slave;
