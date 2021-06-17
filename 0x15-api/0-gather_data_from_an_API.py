@@ -16,22 +16,20 @@ def get_employee_tasks(employeeId):
 
     usersRes = requests.get('https://jsonplaceholder.typicode.com/users/{}'
                             .format(employeeId))
-    todosRes = requests.get('https://jsonplaceholder.typicode.com/users/{}/\
-                            todos'.format(employeeId))
+    todosRes = requests.get('https://jsonplaceholder.typicode.com/users/{}/'
+                            'todos'.format(employeeId))
 
     # print('usersRes: {}\n'.format(usersRes))
     # print('todosRes: {}\n'.format(todosRes))
 
     name = usersRes.json().get('name')
-    print("name: {}".format(name))
-
     todosJson = todosRes.json()
 
     for task in todosJson:
         if task.get('completed'):
             completed_counter += 1
             task_list.append(task.get('title'))
-    print('task_list: {}'.format(task_list))
+
     print('Employee {} is done with tasks({}/{}):'.format(name,
           completed_counter, len(todosJson)))
 
